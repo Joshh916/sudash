@@ -1,0 +1,51 @@
+{% extends "layout.jinja2" %}
+
+
+{% block content %}
+  <div class="form-wrapper">
+
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-warning">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert">
+            x
+          </button>
+        {{ message }}
+      </div>
+    {% endfor %}
+
+    <h1>Log In</h1>
+
+    <form method="POST" action="/login" class=login>
+      {{ form.csrf_token }}
+
+      <fieldset class="username" name="username">
+        {{ form.username.label }}
+        {{ form.username }}
+        {% if form.username.errors %}
+          <ul class="errors">
+            {% for error in form.username.errors %}
+              <li>{{ error }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </fieldset>
+
+      <fieldset class="password" name="password">
+        {{ form.password.label }}
+        {{ form.password }}
+        {% if form.password.errors %}
+          <ul class="errors">
+            {% for error in form.password.errors %}
+              <li>{{ error }}</li>{% endfor %}
+          </ul>
+        {% endif %}
+      </fieldset>
+      <fieldset class="submit-button">
+        {{ form.submit }}
+      </fieldset>
+    </form>
+  </div>
+
+{% endblock %}

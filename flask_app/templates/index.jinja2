@@ -1,0 +1,43 @@
+{% extends "layout.jinja2" %}
+{% block content %}
+    <div class="form-wrapper">
+
+    {% for message in get_flashed_messages() %}
+      <div class="alert alert-warning">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert">
+            x
+          </button>
+        {{ message }}
+      </div>
+    {% endfor %}
+
+        <div class=search-form>
+          <fieldset class="media-type">
+            <div class="film-select">
+              <ul id="media_type">
+                <li>
+                  <input checked id="media_type-0" name="media_type" type="radio" value="movie">
+                  <label for="media_type-0">Movies</label>
+                </li>
+                <li>
+                  <input id="media_type-1" name="media_type" type="radio" value="tv_show">
+                  <label for="media_type-1">TV Shows</label>
+                </li>
+              </ul>
+            </div>
+          </fieldset>
+          <fieldset class="search-str">
+            <label for="search_str">Name</label>
+            <input id="search_str" name="search_str" required type="text" placeholder="Enter movie name here.">
+            <button id="search_btn" name="submit" value="Search">Search</button>
+          </fieldset>
+          <div class="divider"></div>
+        </div>
+    <div class="results_div" id="results_div">
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,350 @@
+*::-webkit-scrollbar {
+    height: 8px;
+    width: 8px;
+}
+*::-webkit-scrollbar-track {
+    background-color: #FFFFFF;
+}
+
+.logo {
+    height: 60px;
+    margin-top: 30px;
+}
+
+body {
+    font-family: inter;
+    color: #2b00c7;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: 75%;
+}
+
+img {
+    max-height: 100%;
+}
+
+fieldset {
+    border: none;
+    width: 100%;
+    margin: auto;
+    padding: 0px;
+}
+
+.dashboard {
+    padding: 0px;
+    margin: 0px;
+}
+
+.alert {
+    display: block;
+    padding: 10px;
+    background-color: rgb(255, 236, 208);
+    color:rgb(204, 0, 0);
+    border-color:rgb(36, 36, 36);
+    border-style: groove;
+    border-width: 2px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #2b00c7;
+    width: 100%;
+    margin: 6px 0px 4px 0px;
+}
+
+
+.search-str {
+    padding: 1vw;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-str input {
+    border-color:#2b00c7;
+    height: 4vh;
+    margin: 2px 5px 0px 10px;
+    width: 95%;
+}
+
+.search-str label {
+    display: block;
+    align-self: center;
+    padding: 5px;
+}
+#search_btn {
+    margin: 2px 0px 0px 10px;
+    border-radius: 5px;
+    background-color: #2b00c7;
+    border: none;
+    color: white;
+    height: 4vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+}
+
+li {
+    list-style-type: none;
+    float: left;
+    width: 50%;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+#media-type {
+    display:flex;
+    align-items: center;
+    width: 100%;
+}
+.film-select {
+    width: 100%;
+}
+
+.film-select label {
+    float: left;
+    width: 100%;
+    height: 10vh;
+    color: #2b00c7;
+    font-size: 3vh;
+    transition: all 0.3s;
+    text-align: center;
+    padding-top: 4vh;
+}
+  
+.film-select input[type="radio"] {
+    display: none;
+}
+
+.film-select input[type="radio"]:checked + label {
+    background-color: #2b00c7;
+    color: rgb(255, 236, 208);
+}
+
+.results_div {
+    width: 80%;
+    padding: .1vh;
+    margin: auto;
+    overflow-y:auto;
+    height: inherit;
+}
+
+.poster {
+    max-width: 20em;
+    min-width: 10em;
+    float: left;
+    padding: 10px;
+}
+
+.show-div {
+    display: flex;
+    vertical-align: middle;
+    width: inherit;
+    padding-top: 20px;
+}
+
+.show-info {
+    max-width: 40em;
+    min-width: 25%;
+    display: inline-block;
+    width: 60vw;
+    padding: 10px;
+}
+
+.show-title {
+    align-items: center;
+    justify-content: center;
+}
+.show-year {
+    align-items: center;
+    justify-content: center;
+}
+.show-overview {
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: large;
+}
+
+.footer {
+    top: 75%;
+    bottom:0;
+    position:fixed;
+    width: 100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+    background-color: white;
+}
+
+.download-table {
+    width: 85%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.download-table th{
+    padding: 8px 0px 8px 8px;
+    text-align: left;
+    background-color: #2b00c7;
+    color: white;
+}
+
+button {
+    margin: 2px 0px 0px 10px;
+    border-radius: 5px;
+    background-color: #2b00c7;
+    border: none;
+    color: white;
+    height: 4vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+    .login {
+        width: 90%;
+    }
+    input {
+        height: 4vh;
+        width: 100%;
+        border-width: .1em;
+        border-radius: 5px;
+    }
+    label {
+        font-size: 3vh;
+    }
+    form {
+        margin: auto;
+    }
+    .form-wrapper {
+        margin: auto;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        height: 72%;
+    }
+    .show-div {
+        display: flex;
+        vertical-align: middle;
+        width: inherit;
+        padding-top: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .submit-button {
+        margin: auto;
+        width: 100%;
+    }
+    #submit {
+        margin: .5em .15em .15em .15em;
+        background-color: #2b00c7;
+        border: none;
+        color: white;
+        height: 4vh;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        padding: 1px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .login {
+        width: 90%;
+    }
+    input {
+        height: 4vh;
+        width: 100%;
+        border-width: .1em;
+        border-radius: 5px;
+    }
+    label {
+        font-size: 3vh;
+    }
+    form {
+        margin: auto;
+    }
+    .form-wrapper {
+        margin: auto;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        height: 72%;
+    }
+    .show-div {
+        display: flex;
+        vertical-align: middle;
+        width: inherit;
+        padding-top: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .submit-button {
+        margin: auto;
+    }
+    #submit {
+        margin: .5em .15em .15em .15em;
+        background-color: #2b00c7;
+        border: none;
+        color: white;
+        height: 4vh;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 100%;
+        padding: 1px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .login {
+        width: 20vw;
+    }
+    input {
+        height: 4vh;
+        width: 100%;
+        border-width: .1em;
+        border-radius: 5px;
+    }
+    .form-wrapper {
+        margin: 0%;
+        position: fixed;
+        width: 100%;
+        background-color: white;
+        height: 72%;
+    }
+    form {
+        margin: 0%;
+    }
+    #submit {
+        margin: .5em .15em .15em .15em;
+        background-color: #2b00c7;
+        border: none;
+        color: white;
+        height: 4vh;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        width: 6vw;
+        padding: 1px;
+    }
+}
