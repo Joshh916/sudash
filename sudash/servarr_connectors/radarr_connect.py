@@ -1,26 +1,16 @@
 import requests
-from os import environ, path
-from dotenv import load_dotenv
-from pprint import pprint
+from os import environ
+from .settings import RADARR_IP, RADARR_KEY, RADARR_PATH, RADARR_PORT, RADARR_PROTOCOL
 
-basedir = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(basedir, 'unitarr.conf'))
-
-
-key = environ.get('RADARR_KEY')
-address = environ.get('RADARR_IP')
-path = environ.get('RADARR_PATH')
-protocol = environ.get('RADARR_PROTOCOL')
-port = environ.get('RADARR_PORT')
-conn = f'{protocol}://{address}:{port}/api/v3/'
+conn = f'{RADARR_PROTOCOL}://{RADARR_IP}:{RADARR_PORT}/api/v3/'
 default_settings = {
     "monitored":True,
     "qualityProfileId":1,
-    "rootFolderPath": path,
+    "rootFolderPath": RADARR_PATH,
     "addOptions":{"searchForMovie": True}
 }
 
-headers={'accept': 'application/json', 'x-api-key':key}
+headers={'accept': 'application/json', 'x-api-key':RADARR_KEY}
 
 def search_radarr(search_str):
     return requests.get(conn + 'movie/lookup' + '?term=' + search_str, headers=headers)
@@ -36,7 +26,6 @@ def get_queue():
 def remove_stalled(id):
     params = '?removeFromClient=true&blocklist=true'
     response = requests.delete(conn + 'queue/' + str(id) + params, headers=headers)
-    print(response.status_code)
     return response
 
 def recover_stalled(name):

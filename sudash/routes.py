@@ -6,7 +6,6 @@ from .models import db, User
 from . import login_manager
 from .servarr_connectors import  *
 from .servarr_connectors.transmission_connect import *
-from pprint import pprint
 
 # Blueprint Configuration
 main_bp = Blueprint(
@@ -20,7 +19,6 @@ main_bp = Blueprint(
 def dashboard():
     """Logged-in User Dashboard."""
     form = SearchForm()
-    # pprint(results.json())
     return render_template(
         'index.jinja2',
         form=form,
@@ -31,7 +29,6 @@ def dashboard():
 
 @main_bp.route('/', methods=['GET', 'POST'])
 def content(data):
-    print('CONTENT')
     render_template('content.jinja2', data)
 
 @main_bp.route('/api/v1/tv/<name>', methods=['GET'])
