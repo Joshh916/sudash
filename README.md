@@ -5,3 +5,5 @@ sudash.conf needs to be configured before it can function properly, create a ran
 A sqlite db named sudash.db is needed to store data user data.
 
 requirements.txt contains all of the necessary modules needed to run SUDash
+
+![Screenshot](https://github.com/user-attachments/assets/93e76735-5bad-4e6b-b004-7f12e092f055)
